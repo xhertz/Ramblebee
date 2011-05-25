@@ -185,7 +185,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   config.omniauth :facebook, "175326695854719", "9dc6dfb261d7706e4bb1b1f26617ef8f"
-
+        {:scope => 'email, offline_access', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
 
  # config.oauth :facebook, 'APP_ID', 'APP_SECRET', 
  #   :site => 'https://graph.facebook.com/',

@@ -8,10 +8,13 @@ def start
     :scope => 'email')
 end
  
+def passthru
+  render :file => "#{Rails.root}/public/404.html", :status => 404, :layout => false
+end	 
+ 
 def callback
   access_token = client.get_token(params[:code], :redirect_uri => "http://almalogic.dev")
-	 
-  session[:fb_user] = JSON.parse access_token.get('/me')
+ session[:fb_user] = JSON.parse access_token.get('/me')
   # store the access_token.token value as well as any user info you wanted
  
   redirect_to :controller => :users, :action => :login_process_facebook, :token => access_token.token
