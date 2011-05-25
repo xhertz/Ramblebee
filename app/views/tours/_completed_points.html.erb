@@ -1,0 +1,11 @@
+<% if @tour.points.completed.size > 0 %>
+<h4>Completed</h4>
+<% end %>
+
+<ul>
+	<% for point in @tour.points.completed %>
+	<li id="point_<%= point.id %>">
+		<%= check_box_tag 'completed_points[]', point.id, point.completed?, :id => "completedpoint-#{point.id}" %> <span class="description"><%= point.description %></span>
+	</li>
+	<% end %>
+</ul>

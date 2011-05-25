@@ -1,0 +1,12 @@
+<div id="nav">
+	<h1><%= @tour.name %></h1>
+	<%= link_to 'edit', edit_tour_path(@tour) %> |
+	<%= link_to "I'm done reordering", @tour, :id => 'done-reordering' %> |
+	<%= link_to 'all tours', tours_path %>
+</div>
+
+
+
+<%= render :partial => "active_points" %>
+
+

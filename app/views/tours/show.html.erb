@@ -1,0 +1,27 @@
+<div id="nav">
+	<h1><%= @tour.name %></h1>
+	<%= link_to 'edit', edit_tour_path(@tour) %> |
+	<%= link_to 'reorder', sort_points_path(@tour) %> |
+	<%= link_to 'all tours', tours_path %>
+</div>	
+
+
+
+<div id="active_points">
+	<%= render :partial => "active_points" %>
+</div>
+
+<div>
+	<p id="add-point">
+		<%= link_to 'add a new point', new_tour_point_path(@tour), :id => 'new_point_link' %> 
+		<span id="delete-tour">or <%= link_to 'delete this tour', @tour, :method => :delete, :confirm => 'Are you sure?' %></span>
+	</p>
+	<div id="new_point_form" style="display:none" data-show-form="<%= params[:show_point_form] ? 1 : 0 %>">
+		<%= render :template => '/points/new', :layout => nil %>
+	</div>	
+</div>
+
+<div id="completed-points">
+	<%= render :partial => "completed_points" %>
+</div>
+

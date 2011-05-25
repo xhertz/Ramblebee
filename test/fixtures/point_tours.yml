@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  point_id: 1
+  tour_id: 1
+  position: 1
+
+two:
+  point_id: 1
+  tour_id: 1
+  position: 1

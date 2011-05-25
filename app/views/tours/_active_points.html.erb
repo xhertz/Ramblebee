@@ -1,0 +1,16 @@
+<ul id="active-points-list" data-tour-id="<%= @tour.id %>" class="<%= params[:sort_points] ? 'sortable' : ''%>">
+	<% for point in @points %>
+	<%= content_tag_for(:li, point) do %>
+		<% if params[:sort_points] -%>
+			<%= image_tag 'drag.gif', :class => 'handle' -%>
+		<% else -%>
+		<%= check_box_tag 'completed_points[]', point.id, false, :id => "activepoint-#{point.id}" %> 
+		<% end %>
+		<span class="description"><%= point.name %></span>
+
+		
+    <% end %>
+
+	<% end %>
+</ul>
+

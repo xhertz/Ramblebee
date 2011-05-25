@@ -1,0 +1,35 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  tourName: MyString
+  tourLocaleName: MyString
+  shortDescription: MyString
+  longDescription: MyText
+  tag: MyString
+  language: MyString
+  category: MyString
+  type: MyString
+  distance: 
+  ageGroup: MyString
+  timeRequired: 
+  city: MyString
+  country: MyString
+  bestTime: MyString
+  price: 1.5
+
+two:
+  tourName: MyString
+  tourLocaleName: MyString
+  shortDescription: MyString
+  longDescription: MyText
+  tag: MyString
+  language: MyString
+  category: MyString
+  type: MyString
+  distance: 
+  ageGroup: MyString
+  timeRequired: 
+  city: MyString
+  country: MyString
+  bestTime: MyString
+  price: 1.5

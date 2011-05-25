@@ -1,0 +1,14 @@
+<h1>My tours</h1>
+	
+
+
+<ul id="tours">
+	<% for tour in @tours %>
+	<li><%= link_to tour.name, tour %></li>
+	<% end %>
+</ul>
+
+<p>
+	<%= link_to 'new tour', new_tour_path, :id => 'new_tour_link' %>	
+</p>
+

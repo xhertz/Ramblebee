@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  localeName: MyString
+  shortDescription: MyString
+  longDescription: MyText
+  tag: MyString
+  language: MyString
+  category: MyString
+  timeRequiredForResource: 
+  timeSuggestedToSpend: 
+  bestTime: MyString
+  latitude: 1.5
+  longitude: 1.5
+  altitude: 1.5
+
+two:
+  name: MyString
+  localeName: MyString
+  shortDescription: MyString
+  longDescription: MyText
+  tag: MyString
+  language: MyString
+  category: MyString
+  timeRequiredForResource: 
+  timeSuggestedToSpend: 
+  bestTime: MyString
+  latitude: 1.5
+  longitude: 1.5
+  altitude: 1.5

@@ -1,0 +1,3 @@
+rails generate scaffold Point name:string localeName:string shortDescription:string longDescription:text tag:string language:string category:string timeRequiredForResource:int timeSuggestedToSpend:int bestTime:string latitude:float longitude:float altitude:float
+
+rails generate scaffold Tour Name:string:string LocaleName:string shortDescription:string longDescription:text tag:string language:string category:string type:string distance:int ageGroup:string timeRequired:int city:string country:string bestTime:string price:float

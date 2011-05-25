@@ -1,0 +1,11 @@
+$('#point_'+<%= @point.id %>).fadeToggle("fast", function () {
+    $('#completed-points').html("<%= escape_javascript(render(:partial => 'tours/completed_points')) %>");
+	$('#active_points').html("<%= escape_javascript(render(:partial => 'tours/active_points')) %>");
+	$('#completed-points').effect("highlight", {}, 1000);
+	$('#active_points').effect("highlight", {}, 1000);
+	toggle_delete_tour_link();   
+});
+
+
+
+
