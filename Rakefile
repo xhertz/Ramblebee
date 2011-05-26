@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Almalogic::Application.load_tasks
+Ramblebee::Application.load_tasks
