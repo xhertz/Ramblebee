@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Points</title>
+  <title>Ramblebee</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
+  <%= yield :head %> 
 </head>
 <body>
 
@@ -38,6 +39,6 @@
 <%= yield %>
 
 
-
+<%= yield :scripts %>
 </body>
 </html>

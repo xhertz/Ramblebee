@@ -3,13 +3,21 @@ class Point < ActiveRecord::Base
   # a before_filter that needs to run after set_position
 #  before_save :set_position, :if => Proc.new { |point| point.completed_changed? || point.new_record? }
 #  include RankedModel
+  acts_as_gmappable
 
-  has_many :points
   has_many :tours, :through => :point_tours
   validates :name, :presence => true
   
   scope :completed, where(:completed => true).order('updated_at desc')
   scope :active, where(:completed => false).order('position')
+ 
+  
+
+  def gmaps4rails_address
+        #describe how to retrieve the address from your model, if you use directly a db column, you can dry your code, see wiki
+        "#{self.longitude}, #{self.latitude}"
+  end
+ 
   
  # ranks :position, :with_same => :tour_id
 

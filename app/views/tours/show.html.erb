@@ -5,7 +5,7 @@
 	<%= link_to 'all tours', tours_path %>
 </div>	
 
-
+<%= gmaps4rails(@json) %>
 
 <div id="active_points">
 	<%= render :partial => "active_points" %>

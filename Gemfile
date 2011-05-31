@@ -1,17 +1,12 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.6'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'sqlite3'
 gem 'jquery-rails'
 gem 'ranked-model', '0.0.2'
-
 gem 'devise', '1.2.rc'
-# gem 'oauth2', :git => "http://github.com/intridea/oauth2"
 gem 'omniauth'
+gem 'gmaps4rails'
 
 
 

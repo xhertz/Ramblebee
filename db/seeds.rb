@@ -8,5 +8,6 @@
 
 User.create(:email => 'carl.greenwood@gmail.com', :password => 'fdr2yakk')
 
-Point.create(:name => 'Tower')
-Point.create(:name => 'pub')
+Tour.create(:name => 'Vancouver', :user_id => 1)
+
+Point.create(:name => 'Airport', :latitude => 49.1919444444, :longitude => -123.1813888889, :gmaps => true)

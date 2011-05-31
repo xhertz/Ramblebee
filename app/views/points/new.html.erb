@@ -2,7 +2,12 @@
 <p>
 	<%= f.label :name  %>
 	<%= f.text_field :name, :size => 60 %>
+	<%= f.label :longitude %>
+	<%= f.text_field :longitude, :size => 10 %>
+	<%= f.label :latitude %>
+	<%= f.text_field :latitude, :size => 10 %>
+	
 </p>	
 
-<%= f.submit 'Add this task' %> <%= link_to 'close','#', :id => 'close_new_task_link', :style => 'display:none' %>
+<%= f.submit 'Add this Point' %> <%= link_to 'close','#', :id => 'close_new_task_link', :style => 'display:none' %>
 <% end %>

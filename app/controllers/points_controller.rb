@@ -2,10 +2,12 @@ class PointsController < ApplicationController
   before_filter :authenticate_user!
   before_filter :find_tour, :except => :toggle_completed
   
+ 
   def new
     @point = @tour.points.new
   end
-  
+
+
   def create
     @point = @tour.points.new(params[:point])
     if @point.save

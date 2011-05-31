@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110519194959) do
+ActiveRecord::Schema.define(:version => 20110531193944) do
 
   create_table "installs", :force => true do |t|
     t.string   "email",                               :default => "", :null => false
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20110519194959) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "completed",               :default => false
+    t.boolean  "gmaps"
   end
 
   create_table "tours", :force => true do |t|

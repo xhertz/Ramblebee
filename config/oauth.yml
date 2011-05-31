@@ -1,7 +1,7 @@
 development:
-    application_id: 175326695854719
-    api_key: b1706b8a225e578b1d9fc0170799655a
-    secret_key: 9dc6dfb261d7706e4bb1b1f26617ef8f
+    application_id: 151157898288127
+    api_key: 5a482ca8c95d1ad3d3a47bb7f0a16a39
+    secret_key: f8b582766e45c772fda6fba65de203b9
     canvas_page_name: ramblebee
     callback_url: http://ramblebee.dev
     pretty_errors: true
@@ -12,4 +12,18 @@ development:
     public_port: 4007
     local_port: 3000
     server_alive_interval: 0
-
+    
+production:
+    application_id: 175326695854719
+    api_key: b1706b8a225e578b1d9fc0170799655a
+    secret_key: 9dc6dfb261d7706e4bb1b1f26617ef8f
+    canvas_page_name: ramblebee
+    callback_url: http://ramblee.heroku.com
+    pretty_errors: true
+    set_asset_host_to_callback_url: true
+    tunnel:
+    public_host_username: carl.greenwood
+    public_host:
+    public_port: 4007
+    local_port: 3000
+    server_alive_interval: 0

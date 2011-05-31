@@ -7,6 +7,7 @@ class ToursController < ApplicationController
   
   def show
     @tour = current_user.tours.find(params[:id])
+    @json = Point.all.to_gmaps4rails  
     @points = Point.all.each
     if params[:sort_points]
       render :action => 'sort_points'
