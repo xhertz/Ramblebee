@@ -5,11 +5,38 @@
 	<%= link_to 'all tours', tours_path %>
 </div>	
 
-<%= gmaps4rails(@json) %>
 
-<div id="active_points">
-	<%= render :partial => "active_points" %>
-</div>
+<% gmaps4rails(@starts) %>
+bounds:<%= @bounds%>
+
+<script type="text/javascript" charset="utf-8">
+
+var marker = null;
+function gmaps4rails_callback() {
+   
+
+   // Gmaps4Rails.add_markers(markers); 
+   // Gmaps4Rails.clear_markers();	
+
+
+   if (marker != null) { marker.setMap(null); }
+   google.maps.event.addListener(Gmaps4Rails.map, 'click', 
+   function(object){ 
+		
+	// alert('lat: ' + object.latLng.lat() + ', long: ' + object.latLng.lng());
+
+	marker = new google.maps.Marker({position: object.latLng, map: Gmaps4Rails.map});
+	
+	Gmaps4Rails.add_markers(marker);
+	});
+
+}
+   
+</script>
+
+
+<%= gmaps("markers" => {"data" => @starts, "map_options" => {"auto_adjust" => "true", "bounds" => @bounds}, "options"  => {"list_container" => "markers_list"} }) %>
+<ul id="markers_list">  </ul>
 
 <div>
 	<p id="add-point">

@@ -7,9 +7,6 @@
 		<%= check_box_tag 'completed_points[]', point.id, false, :id => "activepoint-#{point.id}" %> 
 		<% end %>
 		<span class="description"><%= point.name %></span>
-		<span class="location"><%= point.latitude %>, <%= point.longitude%></span>
-
-		
     <% end %>
 
 	<% end %>
