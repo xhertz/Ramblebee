@@ -13,7 +13,7 @@
 
 <div id="user_nav">
 <% if user_signed_in? %>
-<p>You are signed in as <%= current_user.name %>. Not you? <%= link_to 'Sign out', destroy_user_session_path %></p>
+<p>You are signed in as <%= current_user.email %>. Not you? <%= link_to 'Sign out', destroy_user_session_path %></p>
 <% else %>
 
 <p>
