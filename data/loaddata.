@@ -1,0 +1,5 @@
+mysql -u root -p testproject_development -h localhost
+load data infile '/Users/cgreen/projects/ramblebee/data/Vancouver'
+into table points
+fields terminated by '\t' lines terminated by '\n'
+(language, name, latitude, longitude, @types, @pop, altitude, @Country, @Subregion, @Scale, @dim, @psize, @style, @type, @image, @imagejpg)

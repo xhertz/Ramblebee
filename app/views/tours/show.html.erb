@@ -6,36 +6,67 @@
 </div>	
 
 
-<% gmaps4rails(@starts) %>
-bounds:<%= @bounds%>
+<% gmaps4rails(@points) %>
 
 <script type="text/javascript" charset="utf-8">
-
+/*
 var marker = null;
 function gmaps4rails_callback() {
    
 
-   // Gmaps4Rails.add_markers(markers); 
-   // Gmaps4Rails.clear_markers();	
-
-
    if (marker != null) { marker.setMap(null); }
+
    google.maps.event.addListener(Gmaps4Rails.map, 'click', 
    function(object){ 
-		
-	// alert('lat: ' + object.latLng.lat() + ', long: ' + object.latLng.lng());
 
-	marker = new google.maps.Marker({position: object.latLng, map: Gmaps4Rails.map});
-	
-	Gmaps4Rails.add_markers(marker);
+	// alert('lat: ' + object.latLng.lat() + ', long: ' + object.latLng.lng());
+	//	var bounds = Gmaps4Rails.map.getBounds();
+	//	Gmaps4Rails.map.fitBounds(bounds);
+ 	// Gmaps4Rails.clear_markers();	
+		marker = new google.maps.Marker({position: object.latLng, map: Gmaps4Rails.map});
+  		Gmaps4Rails.add_markers(marker);
 	});
+	
+	if (Gmaps4Rails.markers.length == 1) {
+    	//only one marker, choose the zoom level you expect
+		Gmaps4Rails.map_options.auto_zoom = false;
+    //	Gmaps4Rails.map.setZoom(5);
+    	alert('here')
+
+   }
+   else{
+    	//more than one marker, let's auto_zoom
+    	Gmaps4Rails.map_options.auto_zoom = true;
+    	Gmaps4Rails.adjust_map_to_bounds();
+   }
+*/   
 
 }
    
 </script>
 
+<%= gmaps(
+	
+	"markers" => 
+		{
+		"data" => @starts, 
+		"options"  => 
+			{
+			"list_container" => "markers_list"
+			 } 
+		
+		},
+		"map_options" => 
+			{
+			"auto_zoom" => "false",
+			"auto_adjust" => "true", 
+		    "bounds" => @bounds
+			}, 
+		) %>
 
-<%= gmaps("markers" => {"data" => @starts, "map_options" => {"auto_adjust" => "true", "bounds" => @bounds}, "options"  => {"list_container" => "markers_list"} }) %>
+
+
+
 <ul id="markers_list">  </ul>
 
 <div>

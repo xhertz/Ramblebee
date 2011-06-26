@@ -1,7 +1,9 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.6'
-gem 'sqlite3'
+# gem 'sqlite3'
+# gem 'mysql2
+gem 'mysql2', '< 0.3'
 gem 'jquery-rails'
 gem 'ranked-model', '0.0.2'
 gem 'devise', '1.2.rc'

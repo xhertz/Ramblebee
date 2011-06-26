@@ -9,20 +9,15 @@ class ToursController < ApplicationController
     @tour = current_user.tours.find(params[:id])
     @json = @tour.points.to_gmaps4rails  
     @locations = Gmaps4rails.geocode(@tour.name)
-    @points = []
-    @bounds = []
+    @points = Point.all.to_gmaps4rails
+
     @locations.each do |location|
-         @point = Point.new(:name => location[:matched_address], :latitude => location[:lat], :longitude => location[:lng], :gmaps => true);
-        # @bounds = [location[:bounds]["northeast"], location[:bounds]["southwest"]]
-          @bounds =          '[{"lat": 53.7161, "lng": -113.273159 }, {"lat": 53.395655 , "lng": -113.714738 }]'
-    
-         @points.push(@point)
+         @start = Point.new(:name => location[:matched_address], :latitude => location[:lat], :longitude => location[:lng], :gmaps => true)
+         @bounds = [location[:bounds]["northeast"], location[:bounds]["southwest"]]   	   
     end
-    @starts = @points.to_gmaps4rails   
+    @starts = @start.to_gmaps4rails   
     
-    
-    
-    
+  
     if params[:sort_points]
       render :action => 'sort_points'
     end
